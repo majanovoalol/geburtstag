@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Alles Gute zum 65. Geburtstag!</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(to bottom, #800080, #ffffff);
+    text-align: center;
+}
+header {
+    background: #a020f0;
+    color: white;
+    padding: 30px;
+}
+header h1 { margin: 0; }
+.date { margin-top: 10px; font-size: 1.2em; }
+.section { margin: 40px 20px; }
+img { width: 300px; border-radius: 15px; margin-top: 10px; }
+audio { margin-top: 10px; }
+@keyframes fadein { from {opacity:0;} to {opacity:1;} }
+.audio-container { animation: fadein 2s; }
+</style>
+</head>
+<body>
+
+<header>
+<h1>Alles gute zum 65. Geburtstag!</h1>
+<div class="date">27.03.2026</div>
+</header>
+
+<div class="audio-container">
+<audio id="happy" autoplay>
+<source src="happybirthday.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="section">
+<h2>Happy Birthday</h2>
+<img src="bild.jpg" alt="Foto">
+<br>
+<audio controls>
+<source src="happybirthday.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="section">
+<h2>Orappendudai</h2>
+<audio controls>
+<source src="orappendudai.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="section">
+<h2>Largo (Vivaldi)</h2>
+<audio controls>
+<source src="largo.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="section">
+<h2>Memory (Cars)</h2>
+<audio controls>
+<source src="memory.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<script>
+let happy = document.getElementById("happy");
+happy.volume = 0;
+let vol = 0;
+let fadeIn = setInterval(function(){
+  if(vol < 0.5){
+    vol += 0.01;
+    happy.volume = vol;
+  } else {
+    clearInterval(fadeIn);
+  }
+}, 100);
+</script>
+
+</body>
+</html>
